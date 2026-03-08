@@ -1,5 +1,5 @@
 manifestVersion: 1
-id: sparkles-excalidash
+id: niclassslua-excalidash
 name: ExcaliDash
 tagline: Self-hosted dashboard and organizer for Excalidraw with live collaboration
 icon: https://raw.githubusercontent.com/ZimengXiong/ExcaliDash/main/readme-assets/logoExcaliDash.png
@@ -18,7 +18,7 @@ description: >-
 
 developer: Zimeng Xiong
 website: https://github.com/ZimengXiong/ExcaliDash
-submitter: niclasfrey
+submitter: Niclassslua
 submission: https://github.com/niclasfrey/umbrel-community-app-store
 repo: https://github.com/ZimengXiong/ExcaliDash
 support: https://github.com/ZimengXiong/ExcaliDash/issues
