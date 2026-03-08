@@ -1,0 +1,35 @@
+manifestVersion: 1
+id: sparkles-excalidash
+name: ExcaliDash
+tagline: Self-hosted dashboard and organizer for Excalidraw with live collaboration
+icon: https://raw.githubusercontent.com/ZimengXiong/ExcaliDash/main/readme-assets/logoExcaliDash.png
+category: Files & Productivity
+version: "0.4.27"
+port: 6767
+description: >-
+  ExcaliDash is a self-hosted dashboard and organizer for Excalidraw. Store all
+  your drawings persistently, collaborate in real-time, organize them into
+  collections, and share them with scoped access controls.
+
+
+  Features include persistent storage, real-time collaboration, multi-user
+  authentication (local or OIDC), scoped internal & external sharing, full-text
+  search, drag-and-drop collections, and export/import for backups.
+
+developer: Zimeng Xiong
+website: https://github.com/ZimengXiong/ExcaliDash
+submitter: niclasfrey
+submission: https://github.com/niclasfrey/umbrel-community-app-store
+repo: https://github.com/ZimengXiong/ExcaliDash
+support: https://github.com/ZimengXiong/ExcaliDash/issues
+gallery:
+  - https://raw.githubusercontent.com/ZimengXiong/ExcaliDash/main/readme-assets/dashboard.png
+  - https://raw.githubusercontent.com/ZimengXiong/ExcaliDash/main/readme-assets/scoped.png
+  - https://raw.githubusercontent.com/ZimengXiong/ExcaliDash/main/readme-assets/settingsPage.png
+releaseNotes: >-
+  Initial Umbrel release of ExcaliDash v0.4.27. See
+  https://github.com/ZimengXiong/ExcaliDash/releases for upstream release notes.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
