@@ -14,6 +14,7 @@ services:
       # Application environment
       - NODE_ENV=production
       - SERVER_API_PROTOCOL=https
+      - TRUST_PROXY=1
 
       # ---------------------------------------------------------------
       # SECURITY KEYS — change these to unique random values!
