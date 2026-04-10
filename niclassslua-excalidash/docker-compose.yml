@@ -9,7 +9,7 @@ services:
       APP_PORT: 80
 
   backend:
-    image: zimengxiong/excalidash-backend:latest
+    image: zimengxiong/excalidash-backend:0.4.28
     restart: on-failure
     environment:
       - DATABASE_URL=file:/app/prisma/dev.db
@@ -28,7 +28,7 @@ services:
       - ${APP_DATA_DIR}/data:/app/prisma
 
   frontend:
-    image: zimengxiong/excalidash-frontend:latest
+    image: zimengxiong/excalidash-frontend:0.4.28
     restart: on-failure
     depends_on:
       - backend
