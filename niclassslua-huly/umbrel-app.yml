@@ -1,0 +1,51 @@
+manifestVersion: 1
+id: niclassslua-huly
+name: Huly
+tagline: All-in-one project management, CRM, chat and virtual office
+icon: https://avatars.githubusercontent.com/u/87086734?v=4
+category: Files & Productivity
+version: "0.7.426"
+port: 8087
+description: >-
+  Huly is an open-source, all-in-one workspace that replaces Linear, Jira,
+  Slack, Notion and Motion. It bundles project management, issue tracking,
+  documents, virtual office, chat, HR, recruiting and a CRM into one
+  self-hosted platform.
+
+
+  On first launch, open the app and create an account — the first account you
+  register becomes the owner of your instance. Then create a workspace and
+  invite the rest of your team.
+
+
+  Heads up: Huly is a full microservice stack (CockroachDB, Elasticsearch,
+  Redpanda, MinIO and nine Huly services). Upstream recommends at least 2 CPU
+  cores and 8 GB of RAM, with 16 GB preferred. On a smaller Umbrel device it
+  will be slow or may not start at all. The first start takes a few minutes
+  while Elasticsearch installs its attachment plugin and the database is
+  initialised.
+
+developer: Huly Labs (Hardcore Engineering)
+website: https://huly.io
+submitter: Niclassslua
+submission: https://github.com/Niclassslua/umbrel-community-app-store
+repo: https://github.com/hcengineering/huly-selfhost
+support: https://github.com/hcengineering/huly-selfhost/issues
+gallery:
+  - https://repository-images.githubusercontent.com/392073243/6d27d5cc-38cd-4d88-affe-bb88b393180c
+releaseNotes: >-
+  Initial Umbrel release, based on huly-selfhost v0.7.426.
+
+
+  Unlike the upstream compose file, this build does not pin a single
+  HOST_ADDRESS. Huly's client-facing URLs are rewritten per request to whatever
+  hostname you used, so the app works over umbrel.local, over your Umbrel's LAN
+  IP and over Tailscale without reconfiguration.
+
+
+  Mail, Telegram, calendar, Gmail, the AI bot and LiveKit ("virtual office")
+  integrations are not included — they need external credentials and services.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
