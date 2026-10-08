@@ -4,7 +4,7 @@ name: Huly
 tagline: All-in-one project management, CRM, chat and virtual office
 icon: https://avatars.githubusercontent.com/u/87086734?v=4
 category: Files & Productivity
-version: "0.7.426"
+version: "0.7.426-patch.1"
 port: 8087
 description: >-
   Huly is an open-source, all-in-one workspace that replaces Linear, Jira,
@@ -34,17 +34,9 @@ support: https://github.com/hcengineering/huly-selfhost/issues
 gallery:
   - https://repository-images.githubusercontent.com/392073243/6d27d5cc-38cd-4d88-affe-bb88b393180c
 releaseNotes: >-
-  Initial Umbrel release, based on huly-selfhost v0.7.426.
-
-
-  Unlike the upstream compose file, this build does not pin a single
-  HOST_ADDRESS. Huly's client-facing URLs are rewritten per request to whatever
-  hostname you used, so the app works over umbrel.local, over your Umbrel's LAN
-  IP and over Tailscale without reconfiguration.
-
-
-  Mail, Telegram, calendar, Gmail, the AI bot and LiveKit ("virtual office")
-  integrations are not included — they need external credentials and services.
+  Restart Huly services after a clean upgrade exit. Transactor and workspace
+  used on-failure, which left them down after a planned exit 0; they now use
+  unless-stopped to match upstream.
 dependencies: []
 path: ""
 defaultUsername: ""
