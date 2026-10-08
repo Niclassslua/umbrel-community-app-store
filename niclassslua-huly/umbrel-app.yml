@@ -4,7 +4,7 @@ name: Huly
 tagline: All-in-one project management, CRM, chat and virtual office
 icon: https://avatars.githubusercontent.com/u/87086734?v=4
 category: Files & Productivity
-version: "0.7.426-patch.1"
+version: "0.7.426-patch.2"
 port: 8087
 description: >-
   Huly is an open-source, all-in-one workspace that replaces Linear, Jira,
@@ -34,9 +34,10 @@ support: https://github.com/hcengineering/huly-selfhost/issues
 gallery:
   - https://repository-images.githubusercontent.com/392073243/6d27d5cc-38cd-4d88-affe-bb88b393180c
 releaseNotes: >-
-  Restart Huly services after a clean upgrade exit. Transactor and workspace
-  used on-failure, which left them down after a planned exit 0; they now use
-  unless-stopped to match upstream.
+  Replace the pulled MinIO image (quay.io/minio/minio) with a pinned
+  pgsty/silo tag so installs and updates can pull storage again. Silo is a
+  MinIO fork and should read existing data/files in place, but that has not
+  been verified on this Umbrel packaging — back up data/files before updating.
 dependencies: []
 path: ""
 defaultUsername: ""

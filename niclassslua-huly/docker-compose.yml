@@ -109,7 +109,7 @@ services:
       retries: 10
 
   minio:
-    image: quay.io/minio/minio:RELEASE.2025-04-22T22-12-26Z
+    image: pgsty/silo:RELEASE.2026-09-16T00-00-00Z
     command: server /data --address ":9000" --console-address ":9001"
     restart: unless-stopped
     depends_on:
