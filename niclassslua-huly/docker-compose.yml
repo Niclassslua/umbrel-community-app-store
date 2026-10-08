@@ -31,7 +31,7 @@ services:
 
   nginx:
     image: nginx:1.27-alpine
-    restart: on-failure
+    restart: unless-stopped
     # nginx resolves every proxy_pass hostname once at startup and refuses to
     # start if one is missing, so it has to come up after everything it proxies.
     depends_on:
@@ -54,7 +54,7 @@ services:
   cockroach:
     image: cockroachdb/cockroach:v24.2.5
     command: start-single-node --accept-sql-without-tls
-    restart: on-failure
+    restart: unless-stopped
     depends_on:
       init:
         condition: service_completed_successfully
@@ -80,7 +80,7 @@ services:
 
   redpanda:
     image: docker.redpanda.com/redpandadata/redpanda:v24.3.6
-    restart: on-failure
+    restart: unless-stopped
     depends_on:
       init:
         condition: service_completed_successfully
@@ -111,7 +111,7 @@ services:
   minio:
     image: quay.io/minio/minio:RELEASE.2025-04-22T22-12-26Z
     command: server /data --address ":9000" --console-address ":9001"
-    restart: on-failure
+    restart: unless-stopped
     depends_on:
       init:
         condition: service_completed_successfully
@@ -124,7 +124,7 @@ services:
 
   elastic:
     image: elasticsearch:7.14.2
-    restart: on-failure
+    restart: unless-stopped
     depends_on:
       init:
         condition: service_completed_successfully
@@ -147,7 +147,7 @@ services:
 
   rekoni:
     image: hardcoreeng/rekoni-service:v0.7.426
-    restart: on-failure
+    restart: unless-stopped
     environment:
       - SECRET=${APP_SEED}
     deploy:
@@ -157,14 +157,14 @@ services:
 
   stats:
     image: hardcoreeng/stats:v0.7.426
-    restart: on-failure
+    restart: unless-stopped
     environment:
       - PORT=4900
       - SERVER_SECRET=${APP_SEED}
 
   transactor:
     image: hardcoreeng/transactor:v0.7.426
-    restart: on-failure
+    restart: unless-stopped
     depends_on:
       cockroach:
         condition: service_healthy
@@ -184,7 +184,7 @@ services:
 
   collaborator:
     image: hardcoreeng/collaborator:v0.7.426
-    restart: on-failure
+    restart: unless-stopped
     environment:
       - COLLABORATOR_PORT=3078
       - SECRET=${APP_SEED}
@@ -194,7 +194,7 @@ services:
 
   account:
     image: hardcoreeng/account:v0.7.426
-    restart: on-failure
+    restart: unless-stopped
     depends_on:
       cockroach:
         condition: service_healthy
@@ -219,7 +219,7 @@ services:
 
   workspace:
     image: hardcoreeng/workspace:v0.7.426
-    restart: on-failure
+    restart: unless-stopped
     depends_on:
       cockroach:
         condition: service_healthy
@@ -238,7 +238,7 @@ services:
 
   fulltext:
     image: hardcoreeng/fulltext:v0.7.426
-    restart: on-failure
+    restart: unless-stopped
     depends_on:
       cockroach:
         condition: service_healthy
@@ -259,7 +259,7 @@ services:
 
   front:
     image: hardcoreeng/front:v0.7.426
-    restart: on-failure
+    restart: unless-stopped
     environment:
       - SERVER_PORT=8080
       - SERVER_SECRET=${APP_SEED}
@@ -284,7 +284,7 @@ services:
 
   kvs:
     image: hardcoreeng/hulykvs:v0.7.426
-    restart: on-failure
+    restart: unless-stopped
     depends_on:
       cockroach:
         condition: service_healthy
